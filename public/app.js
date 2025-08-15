@@ -305,6 +305,27 @@
     setVal('--');
   }
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const styleSelect = document.getElementById('styleSelect');
+    const header = document.querySelector('header');
+    
+    // Function to update header text color based on selected style
+    function updateHeaderTextColor() {
+        const selectedStyle = styleSelect.value;
+        if (selectedStyle === 'dark') {
+            header.classList.add('header-dark');
+        } else {
+            header.classList.remove('header-dark');
+        }
+    }
+    
+    // Initialize header text color
+    updateHeaderTextColor();
+    
+    // Listen for style changes
+    styleSelect.addEventListener('change', updateHeaderTextColor);
+  });
+
   // Kick off
   setStyle('light');
   loadSummary('summary.json');
