@@ -1,0 +1,98 @@
+/* Minimal styles for full-viewport map and lightweight UI */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: saturate(140%) blur(4px);
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+header.dark {
+  background: rgba(20,20,20,0.9);
+  color: #ddd;
+  border-bottom-color: #333;
+}
+#map {
+  position: absolute;
+  top: 0; /* let map reach the very top so it shows under the translucent header */
+  bottom: 0; left: 0; right: 0;
+}
+
+/* Keep Leaflet's controls below the fixed header while allowing the map itself to extend under it */
+.leaflet-top {
+  top: 56px;
+}
+#loading {
+  position: absolute;
+  top: 56px;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.15);
+  z-index: 1100;
+}
+#loading.hidden { display: none; }
+#loading .box {
+  min-width: 260px;
+  max-width: 400px;
+  background: rgba(255,255,255,0.95);
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+header.dark ~ #loading .box {
+  background: rgba(24,24,24,0.95);
+  color: #ddd;
+  border-color: #333;
+}
+#loading .label { font-size: 14px; margin-bottom: 8px; }
+#loading .bar {
+  width: 100%; height: 8px; border-radius: 4px;
+  background: #e5e5e5; overflow: hidden; border: 1px solid #ccc;
+}
+header.dark ~ #loading .bar { background: #333; border-color: #444; }
+#loading .fill { height: 100%; background: linear-gradient(90deg, #ffd74a, #ff9e2c, #ff5a36); }
+#loading .percent { margin-top: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; text-align: right; }
+.controls select {
+  padding: 5px 6px;
+}
+.controls .slider {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.controls input[type="range"] {
+  width: 120px;
+}
+.controls span {
+  min-width: 24px;
+  display: inline-block;
+  text-align: right;
+}
+.controls .total {
+  margin-left: 8px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(255, 215, 74, 0.25);
+  border: 1px solid rgba(255, 215, 74, 0.6);
+}
+header.dark .controls .total {
+  background: rgba(255, 215, 74, 0.15);
+  border-color: rgba(255, 215, 74, 0.4);
+}
+

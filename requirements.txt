@@ -1,0 +1,2 @@
+fitparse==1.2.0
+tqdm
