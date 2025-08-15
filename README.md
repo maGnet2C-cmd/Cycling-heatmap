@@ -14,7 +14,7 @@ This project builds a lightweight web page that renders GPS points from FIT file
 pip install -r requirements.txt
 ```
 
-2) Put your FIT files into a folder
+2) Put your FIT files into a folder, you can download from your Strava or Garmin website.
 
 - Example: create a `data/` folder and copy all your `.fit` files into it.
 
@@ -28,7 +28,7 @@ python scripts/fit_to_bin.py \
 ```
 
 Notes:
-- `--sample 3` keeps every 3th point (1/3). You can adjust this (e.g., 1, 10).
+- `--sample 3` keeps every 3 point (1/3). You can adjust this (e.g., 1, 10).
 
 4) Serve the static site
 
