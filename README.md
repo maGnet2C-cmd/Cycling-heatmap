@@ -1,5 +1,7 @@
 # Cycling Headmap: FIT-to-Heatmap Web Project
 
+![alt text](img.png)
+
 This project builds a lightweight web page that renders GPS points from FIT files as a heatmap on an interactive map.
 
 ## Quick start
