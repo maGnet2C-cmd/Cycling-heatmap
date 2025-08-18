@@ -2,7 +2,7 @@
 
 ![alt text](img.png)
 
-This project builds a lightweight web page that renders GPS points from FIT files as a heatmap on an interactive map.
+This project builds a lightweight web page that renders GPS points from FIT files as a heatmap on an interactive map. Can be self hosted on openwrt devices with server-side data.
 
 ## Quick start
 
@@ -29,6 +29,7 @@ python scripts/fit_to_bin.py \
 
 Notes:
 - `--sample 3` keeps every 3 point (1/3). You can adjust this (e.g., 1, 10).
+- This part could be slow if you are trying to deploy on a openwrt router with large fit data, recommend to run this script on your PC with better CPU/SSD, then copy the points.bin summary.json files to your router.
 
 4) Serve the static site
 
